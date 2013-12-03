@@ -15,7 +15,7 @@ and -Dcom.sun.management.jmxremote.port you are all good.
 ## Changes in IP ##
 
 On JDK 6 when the IP address changes on the machine running the JVM I am unable to connect to JMX through RMI.
-Presumably because the IP referenced in the RMI connection is no longer valid. From [StackOverflow][1]it looks like:
+Presumably because the IP referenced in the RMI connection is no longer valid. From [StackOverflow][1] it looks like:
 
 > java.rmi.server.hostname: Hostname string; default value is the local host's IP address in "dotted-quad" format ...
 > which is embedded into remote stubs created by this JVM when remote objects are exported. This can be used to control
@@ -24,5 +24,5 @@ Presumably because the IP referenced in the RMI connection is no longer valid. F
 
 So the alternative way to fix the generated hostname for a laptop is to specify `-Djava.rmi.server.hostname`.
 
-[1]: http://stackoverflow.com/questions/10173834/java-rmi-djava-rmi-server-hostname-localhost-still-opens-a-socket-listening-on
+[1]: http://stackoverflow.com/questions/10173834/java-rmi-djava-rmi-server-hostname-localhost-still-opens-a-socket-listening-on 
 
